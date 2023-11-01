@@ -1,0 +1,12 @@
+<div class="prod-box">
+    <div class="prod-img mb-5" style="background-image: url({{product.image}});"></div>
+    <h2 class="mb-2">{{product.title}}</h2>
+    <div class="d-flex justify-content-between my-3 mb-5">
+        <small>Created at: {{formatDate product.createdAt}}</small>
+        <h5>Price: ${{product.price}}</h5>
+    </div>
+    <h3>Kurs haqida malumot: </h3>
+    <p>{{product.description}}</p>
+    <h3>To'liq malumot: </h3>
+    <p>{{product.extraDesc}}</p>
+</div>

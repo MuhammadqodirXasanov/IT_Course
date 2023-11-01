@@ -1,0 +1,40 @@
+<div class="w-75 mx-auto">
+    <h1 class="fs-1 text-center mb-3">Edit Product</h1>
+    {{#if editError}}
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>Error!</strong> {{editError}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {{/if}}
+    <form action="/edit-product/{{product._id}}" method="post">
+        <div class="form-floating mb-3">
+            <input class="form-control" value="{{product.title}}" name="title" type="text" id="floatingInput"
+                placeholder="title">
+            <label for="floatingInput">Title</label>
+        </div>
+        <div class="form-floating  mb-3">
+            <textarea type="text" style="height: 100px;" class="form-control" name="description" id="floatingPassword"
+                placeholder="Description">{{product.description}}</textarea>
+            <label for="floatingPassword">Description</label>
+        </div>
+        <div class="form-floating">
+            <textarea type="text" style="height: 150px;" class="form-control" name="extraDesc" id="floatingPassword"
+                placeholder="extra description">{{product.description}}</textarea>
+            <label for="floatingPassword">Extra description</label>
+        </div>
+        <div class="form-floating mt-3">
+            <input class="form-control" value="{{product.image}}" name="image" type="text" id="floatingInput"
+                placeholder="image">
+            <label for="floatingInput">Image</label>
+        </div>
+        <div class="input-group mb-3 mt-3">
+            <span class="input-group-text bg-light" id="basic-addon1">$</span>
+            <div class="form-floating">
+                <input type="number" value="{{product.price}}" class="form-control" name="price" placeholder="Price"
+                    aria-label="Price" aria-describedby="basic-addon1" id="floatingInputGroup1">
+                <label for="floatingInputGroup1">Price</label>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary mt-2">Edit Product</button>
+    </form>
+</div>

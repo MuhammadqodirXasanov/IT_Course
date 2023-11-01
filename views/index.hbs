@@ -1,0 +1,35 @@
+{{!-- main marketing --}}
+<div></div>
+{{!-- products --}}
+<h1 class="text-center">Products List</h1>
+{{#if products.length}}
+<div class="d-flex flex-wrap gap-4 justify-content-center my-5">
+    {{#each products}}
+    <div class="card" style="width: 30%;">
+        <img src="{{image}}" class="card-img-top" alt="card img">
+        <div class="card-body">
+            <h4 class="card-title">{{title}}</h4>
+            <div class="d-flex justify-content-between">
+                <small>{{formatDate createdAt}}</small>
+                <h6 class="text-end">Price: ${{price}}</h6>
+            </div>
+            <div class="btn-group mt-2">
+                <a type="button" class="btn btn-sm btn-outline-primary d-flex align-items-center"
+                    href="/products/{{_id}}">Detail</a>
+                {{#if @root.token}}
+                {{#ifequal user @root.userId}}
+                <a type="button" class="btn btn-sm btn-outline-secondary d-flex align-items-center"
+                    href="/edit-product/{{_id}}">Edit</a>
+                <form action="/delete-product/{{_id}}" class="m-0 btn btn-outline-danger" method="post">
+                    <button type="submit" class="delete-btn">Delete</button>
+                </form>
+                {{/ifequal}}
+                {{/if}}
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>
+{{else}}
+<h5 class="mx-5 my-5">No Products</h5>
+{{/if}}

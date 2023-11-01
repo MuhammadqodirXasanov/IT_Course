@@ -1,0 +1,23 @@
+.fa-circle-user {
+    font-size: 40px;
+}
+.prod-box {
+    width: 80%;
+    margin: 0 auto;
+}
+.prod-img {
+    height: 70vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 7px;
+}
+.delete-btn {
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 0;
+}
+.delete-btn:hover{
+    color: #fff;
+}
