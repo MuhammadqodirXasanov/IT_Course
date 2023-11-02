@@ -9,7 +9,6 @@ const router = Router();
 router.get('/login', loginMid, (req, res) => {
 	res.render('login', {
 		title: 'Login || My Shop',
-		isOnLogin: true,
 		loginError: req.flash('loginError'),
 	});
 });
@@ -20,7 +19,6 @@ router.get('/logout', (req, res) => {
 router.get('/register', loginMid, (req, res) => {
 	res.render('register', {
 		title: 'Register || My Shop',
-		isOnRegister: true,
 		registerError: req.flash('registerError'),
 	});
 });
@@ -78,7 +76,7 @@ router.post('/register', async (req, res) => {
 	const userData = {
 		firstName: firstname,
 		lastName: lastname,
-		email,
+		email: email,
 		password: hashedPassword,
 	};
 
